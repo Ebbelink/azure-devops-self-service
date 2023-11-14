@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "PACK - Azure DevOps extension",
+      "type": "shell",
+      "command": "cd ./access-control-extension;npm run package",
+      "windows": {
+        "command": "cd .\\access-control-extension;npm run package"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    }
+  ]
+}

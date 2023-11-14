@@ -1,0 +1,106 @@
+{
+  "manifestVersion": 1,
+  "id": "access-control-self-service",
+  "version": "0.1.1",
+  "name": "Access Control self service",
+  "publisher": "StarttoScaleIT",
+  "categories": [
+    "Azure Repos"
+  ],
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "description": "A access control self service portal that provides an out of the box team, group, access setup and immediately provides self service for the end users to do this themselves",
+  "tags": [
+    "self service",
+    "access control",
+    "authorization",
+    "rbac",
+    "role based access control"
+  ],
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/Ebbelink/azure-devops-self-service"
+  },
+  "content": {
+    "details": {
+      "path": "access-control-extension/overview.md"
+    },
+    "license": {
+      "path": "access-control-extension/LICENSE"
+    }
+  },
+  "links": {
+    "getstarted": {
+      "uri": "https://www.starttoscaleit.nl/azure-devops/help/getting-started"
+    },
+    "learn": {
+      "uri": "https://www.starttoscaleit.nl/azure-devops/features"
+    },
+    "support": {
+      "uri": "https://www.starttoscaleit.nl/azure-devops/help"
+    }
+  },
+  "branding": {
+    "color": "rgb(34, 34, 34)",
+    "theme": "dark"
+  },
+
+
+
+  "scopes": [
+    "vso.graph_manage",
+    "vso.project_manage"
+  ],
+  "contributions": [
+    {
+      "id": "my-hub",
+      "type": "ms.vss-web.hub",
+      "targets": [
+        "ms.vss-code-web.code-hub-group"
+      ],
+      "properties": {
+        "name": "My Hub",
+        "uri": "my-hub.html"
+      }
+    },
+    {
+      "id": "example-hub",
+      "type": "ms.vss-web.hub",
+      "targets": [
+        "ms.vss-code-web.code-hub-group"
+      ],
+      "properties": {
+        "name": "Example Hub",
+        "uri": "example-hub.html",
+        "iconAsset": "StarttoScaleIT.access-control-self-service/images/lock-icon.png",
+        "includesData": {
+          "assets": [
+            "StarttoScaleIT.access-control-self-service/images/lock-icon.png"
+          ]
+        }
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "node_modules/azure-devops-extension-sdk",
+      "addressable": true,
+      "packagePath": "lib"
+    },
+    {
+      "path": "access-control-extension/access-control-extension.html",
+      "addressable": true
+    },
+    {
+      "path": "access-control-extension/images/lock-icon.png",
+      "addressable": true
+    }
+  ],
+
+
+
+  "public": false
+}
