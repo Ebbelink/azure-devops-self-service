@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "access-control-self-service",
-  "version": "0.1.1",
+  "version": "0.1.89",
   "name": "Access Control self service",
   "publisher": "StarttoScaleIT",
   "categories": [
@@ -12,6 +12,9 @@
       "id": "Microsoft.VisualStudio.Services"
     }
   ],
+  "icons": {
+    "default": "src/images/logo.png"
+  },
   "description": "A access control self service portal that provides an out of the box team, group, access setup and immediately provides self service for the end users to do this themselves",
   "tags": [
     "self service",
@@ -25,11 +28,11 @@
     "uri": "https://github.com/Ebbelink/azure-devops-self-service"
   },
   "content": {
-    "details": {
-      "path": "access-control-extension/overview.md"
-    },
+    // "details": {
+    //   "path": "access-control-extension/overview.md"
+    // },
     "license": {
-      "path": "access-control-extension/LICENSE"
+      "path": "LICENSE"
     }
   },
   "links": {
@@ -47,60 +50,59 @@
     "color": "rgb(34, 34, 34)",
     "theme": "dark"
   },
-
-
-
   "scopes": [
     "vso.graph_manage",
     "vso.project_manage"
   ],
   "contributions": [
     {
-      "id": "my-hub",
-      "type": "ms.vss-web.hub",
+      "id": "self-service-hub-group",
+      "type": "ms.vss-web.hub-group",
+      "description": "Adds a Self Service hub group at the project level",
       "targets": [
-        "ms.vss-code-web.code-hub-group"
+        "ms.vss-web.project-hub-groups-collection"
       ],
       "properties": {
-        "name": "My Hub",
-        "uri": "my-hub.html"
+        "name": "Self Service",
+        "order": 100,
+        "icon": "asset://images/self-service-logo-green.png"
       }
     },
     {
-      "id": "example-hub",
+      "id": "access-control-hub",
       "type": "ms.vss-web.hub",
+      "description": "Adds a 'Access Control' hub to the Self Service hub group.",
       "targets": [
-        "ms.vss-code-web.code-hub-group"
+        ".self-service-hub-group"
       ],
       "properties": {
-        "name": "Example Hub",
-        "uri": "example-hub.html",
-        "iconAsset": "StarttoScaleIT.access-control-self-service/images/lock-icon.png",
-        "includesData": {
-          "assets": [
-            "StarttoScaleIT.access-control-self-service/images/lock-icon.png"
-          ]
-        }
+        "name": "Hello",
+        "order": 99,
+        "uri": "access-control-extension.html",
+        "icon": "asset://images/logo.png"
       }
     }
   ],
   "files": [
+    // {
+    //   "path": "node_modules/azure-devops-extension-sdk",
+    //   "addressable": true,
+    //   "packagePath": "dist/azure-devops-extension-sdk"
+    // },
     {
-      "path": "node_modules/azure-devops-extension-sdk",
+      "path": "src/access-control-extension.html",
       "addressable": true,
-      "packagePath": "lib"
+      "packagePath": "access-control-extension.html"
     },
     {
-      "path": "access-control-extension/access-control-extension.html",
-      "addressable": true
+      "path": "src/images",
+      "addressable": true,
+      "packagePath": "images"
     },
     {
-      "path": "access-control-extension/images/lock-icon.png",
+      "path": "dist/",
       "addressable": true
     }
   ],
-
-
-
   "public": false
 }

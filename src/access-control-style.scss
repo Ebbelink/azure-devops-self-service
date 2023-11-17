@@ -1,0 +1,11 @@
+$primary-color: rgba(0,103,181,1);
+$secondary-color: rgb(113, 113, 113);
+
+button{
+  .primary{
+    background-color: $primary-color;
+  }
+  .secondary{
+    background-color: $secondary-color;
+  }
+}
