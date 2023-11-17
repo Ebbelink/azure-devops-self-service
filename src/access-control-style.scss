@@ -1,11 +1,19 @@
 $primary-color: rgba(0,103,181,1);
 $secondary-color: rgb(113, 113, 113);
+$tertiary-color: rgb(101, 33, 120);
 
 button{
-  .primary{
+  text-align: center;
+  &.primary{
     background-color: $primary-color;
+    color: white;
   }
-  .secondary{
+  &.secondary{
     background-color: $secondary-color;
+    color: white;
+  }
+  &.tertiary{
+    background-color: $tertiary-color;
+    color: white;
   }
 }

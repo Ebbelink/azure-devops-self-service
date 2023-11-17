@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "access-control-self-service",
-  "version": "0.1.89",
+  "version": "0.1.119",
   "name": "Access Control self service",
   "publisher": "StarttoScaleIT",
   "categories": [

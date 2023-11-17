@@ -5,9 +5,11 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf .\\dist\\ .\\bin\\",
+    "precompile": "npm run clean",
     "compile": "npx webpack",
-    "package": "npm run compile && npx tfx-cli extension create --rev-version --json5",
-    "publish": "npm run compile && npx tfx-cli extension publish --rev-version --json5"
+    "package": "npm run compile && npx tfx-cli extension create --rev-version --json5 --output-path bin",
+    "publish": "npm run compile && npx tfx-cli extension publish --rev-version --json5 --output-path bin --token okv2sck3hiftw4uikus3kgdt5ziamyf62wtplh3gstq4j5stfjcq"
   },
   "keywords": [],
   "author": "",

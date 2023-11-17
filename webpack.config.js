@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/AccessControl.tsx',
+  entry: './src/AccessControl.ts',
   mode: 'development',
   module: {
     rules: [

@@ -131,3 +131,4 @@ dist
 
 # visual studio extensions
 *.vsix
+/bin
