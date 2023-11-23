@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "access-control-self-service",
-  "version": "0.1.119",
+  "version": "0.1.174",
   "name": "Access Control self service",
   "publisher": "StarttoScaleIT",
   "categories": [
@@ -52,7 +52,16 @@
   },
   "scopes": [
     "vso.graph_manage",
-    "vso.project_manage"
+    "vso.project_manage",
+
+    "vso.build_execute",
+    "vso.code_manage",
+    "vso.entitlements",
+    "vso.extension",
+
+    "vso.release_execute",
+    "vso.profile_write",
+    "vso.work_full"
   ],
   "contributions": [
     {

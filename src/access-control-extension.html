@@ -7,15 +7,21 @@
 </head>
 
 <body>
-  <h1>Hello, <span id="name"></span></h1>
-  <h2>This is <strong>ACCESS CONTROL EXTENSION</strong></h2>
+  <h1>Hello, <span id="name"></span><span id="team-name"></span></h1>
+  <h2>This is <strong>ACCESS CONTROL EXTENSION</strong> in project <span id="project-name"></span></h2>
   <button class="enabled primary" type="button">Connect to Feed</button>
   <button class="enabled secondary" type="button" id="do-something">CLICK ME</button>
-  <button type="button" class="tertiary">
-    <div style="text-align: center; font-size: 14px;">Install Now</div>
+  <button type="button" id="show-banner-with-buttons" class="tertiary">
+    <div style="text-align: center; font-size: 14px;">Banner with buttons</div>
   </button>
-  <button class="enabled" type="button">
-    <span>SSH</span>
+
+  <hr />
+
+  <h3>Repo name</h3>
+  <input type="text" id="ci" placeholder="CI" />
+  <input type="text" id="repo-name" placeholder="repo name" />
+  <button type="button" id="create-repo" class="primary">
+    <span>Create repo</span>
   </button>
 
   <br />

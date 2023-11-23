@@ -9,7 +9,7 @@
     "precompile": "npm run clean",
     "compile": "npx webpack",
     "package": "npm run compile && npx tfx-cli extension create --rev-version --json5 --output-path bin",
-    "publish": "npm run compile && npx tfx-cli extension publish --rev-version --json5 --output-path bin --token okv2sck3hiftw4uikus3kgdt5ziamyf62wtplh3gstq4j5stfjcq"
+    "publish": "npm run compile && npx tfx-cli extension publish --rev-version --json5 --output-path bin --token uat5q26offs5eznhlsr77dulllhxtgn5flozz3haxupkzpbbb6ta"
   },
   "keywords": [],
   "author": "",

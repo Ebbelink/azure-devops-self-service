@@ -1,9 +1,26 @@
 $primary-color: rgba(0,103,181,1);
+$primary-color-shade: rgb(0, 89, 156);
 $secondary-color: rgb(113, 113, 113);
 $tertiary-color: rgb(101, 33, 120);
 
 button{
-  text-align: center;
+  align-items: center;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, Ubuntu, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  font-weight: 600;
+  justify-content: center;
+  outline: none;
+  overflow: visible;
+  padding: 6px 12px;
+  position: relative;
+  transition: $primary-color-shade 80ms linear;
+
   &.primary{
     background-color: $primary-color;
     color: white;
@@ -16,4 +33,16 @@ button{
     background-color: $tertiary-color;
     color: white;
   }
+}
+
+input{
+  border: none;
+  outline: none;
+  border: 1px solid;
+  border-radius: 2px;
+  padding: 6px 12px;
+  resize: none;
+  text-overflow: ellipsis;
+  position: relative;
+  line-height: normal;
 }
