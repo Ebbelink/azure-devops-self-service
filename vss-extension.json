@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "access-control-self-service",
-  "version": "0.1.174",
+  "version": "0.1.177",
   "name": "Access Control self service",
   "publisher": "StarttoScaleIT",
   "categories": [
@@ -90,14 +90,23 @@
         "uri": "access-control-extension.html",
         "icon": "asset://images/logo.png"
       }
+    },
+    {
+      "id": "repositories-hub",
+      "type": "ms.vss-web.hub",
+      "description": "Repo self service.",
+      "targets": [
+        ".self-service-hub-group"
+      ],
+      "properties": {
+        "name": "Repositories",
+        "order": 1,
+        "uri": "repositories/repositories.html",
+        "icon": "asset://images/logo.png"
+      }
     }
   ],
   "files": [
-    // {
-    //   "path": "node_modules/azure-devops-extension-sdk",
-    //   "addressable": true,
-    //   "packagePath": "dist/azure-devops-extension-sdk"
-    // },
     {
       "path": "src/access-control-extension.html",
       "addressable": true,
