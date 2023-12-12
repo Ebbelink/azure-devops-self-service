@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "access-control-self-service",
-  "version": "0.1.177",
+  "version": "0.1.189",
   "name": "Access Control self service",
   "publisher": "StarttoScaleIT",
   "categories": [
@@ -76,42 +76,9 @@
         "order": 100,
         "icon": "asset://images/self-service-logo-green.png"
       }
-    },
-    {
-      "id": "access-control-hub",
-      "type": "ms.vss-web.hub",
-      "description": "Adds a 'Access Control' hub to the Self Service hub group.",
-      "targets": [
-        ".self-service-hub-group"
-      ],
-      "properties": {
-        "name": "Hello",
-        "order": 99,
-        "uri": "access-control-extension.html",
-        "icon": "asset://images/logo.png"
-      }
-    },
-    {
-      "id": "repositories-hub",
-      "type": "ms.vss-web.hub",
-      "description": "Repo self service.",
-      "targets": [
-        ".self-service-hub-group"
-      ],
-      "properties": {
-        "name": "Repositories",
-        "order": 1,
-        "uri": "repositories/repositories.html",
-        "icon": "asset://images/logo.png"
-      }
     }
   ],
   "files": [
-    {
-      "path": "src/access-control-extension.html",
-      "addressable": true,
-      "packagePath": "access-control-extension.html"
-    },
     {
       "path": "src/images",
       "addressable": true,

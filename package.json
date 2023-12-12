@@ -9,7 +9,8 @@
     "precompile": "npm run clean",
     "compile": "npx webpack",
     "package": "npm run compile && npx tfx-cli extension create --rev-version --json5 --output-path bin",
-    "publish": "npm run compile && npx tfx-cli extension publish --rev-version --json5 --output-path bin --token [[TOKEN_HERE]]"
+    "publish": "npm run compile && npx tfx-cli extension publish --rev-version --json5 --manifest-globs vss-extension.json src/extensions/**/*.json --output-path bin --token [[TOKEN_HERE]]",
+    "webpack-debug": "node --inspect node_modules/webpack/bin/webpack.js"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.9.0",
+    "copy-webpack-plugin": "^11.0.0",
     "path": "^0.12.7",
     "sass": "^1.69.5",
     "sass-loader": "^13.3.2",

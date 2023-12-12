@@ -1,4 +1,4 @@
-import "./access-control-style.scss";
+import "./repo-info-style.scss";
 
 import * as SDK from "azure-devops-extension-sdk";
 import {

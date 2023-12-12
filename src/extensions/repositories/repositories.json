@@ -1,0 +1,18 @@
+{
+  "contributions": [
+    {
+      "id": "repositories-hub",
+      "type": "ms.vss-web.hub",
+      "description": "Repo self service.",
+      "targets": [
+        ".self-service-hub-group"
+      ],
+      "properties": {
+        "name": "Repositories",
+        "order": 55,
+        "uri": "dist/repositories/repositories.html",
+        "icon": "asset://images/logo.png"
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "contributions": [
+    {
+      "id": "repository-info-hub",
+      "type": "ms.vss-web.hub",
+      "description": "Reposotiroy information",
+      "targets": [
+        ".self-service-hub-group"
+      ],
+      "properties": {
+        "name": "Repo info",
+        "order": 11,
+        "uri": "dist/repo-info/repo-info.html",
+        "icon": "asset://images/logo.png"
+      }
+    }
+  ]
+}
