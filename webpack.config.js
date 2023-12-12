@@ -30,7 +30,7 @@ module.exports = {
         exclude: /node_modules/,
         type: "asset/resource",
         generator: {
-          filename: "[name].css",
+          filename: "[name]/[name].css",
         },
         use: ["sass-loader"],
       },
