@@ -6,26 +6,82 @@
 </head>
 
 <body>
-  <h1>Hello, <span id="name"></span><span id="team-name"></span></h1>
   <h2>This is <strong>Repository self service</strong></h2>
-
-  <hr />
 
   <button class="enabled primary" type="button" id="retrieve-repos">Retieve all repos</button>
   <button class="tertiary" type="button">Banner with buttons</button>
 
   <hr />
 
-  <h3>Repo name</h3>
-  <input type="text" id="ci" placeholder="CI" />
-  <input type="text" id="repo-name" placeholder="repo name" />
-  <button type="button" id="create-repo" class="primary">
-    <span>Create repo</span>
-  </button>
-  <button class="enabled secondary" type="button" id="check-repo-exists">Check exists</button>
+  <div class="page-wrapper">
+    <h3>New repo:</h3>
+    <form id="new-repo-form">
+      <div class="row">
+        <label for="ci">Configuration Item ID</label>
+        <input type="text" id="ci" placeholder="CI" />
+      </div>
+      <div class="row">
+        <label for="repo-name">Repo name</label>
+        <input type="text" id="repo-name" placeholder="repo name" />
+      </div>
+      <div class="row">
+        <label for="team-name">Team name</label>
+        <input type="text" id="team-name" placeholder="Team name" />
+      </div>
+      <div class="row">
+        <span>
+          <input type="checkbox" id="setup-sonarcloud" />
+          <label for="setup-sonarcloud">Create SonarCloud project?</label>
+        </span>
+      </div>
+
+      <div class="row">
+        <button class="enabled secondary" type="button" id="check-repo-exists">Check exists</button>
+        <button type="button" id="create-repo" class="primary">Create repo</button>
+      </div>
+    </form>
+
+    <hr />
+
+    <h3>Give team repo access:</h3>
+    <form id="grant-team-repo-access">
+      <div class="row">
+        <label for="ci">Configuration Item ID</label>
+        <input type="text" id="ci" placeholder="CI" />
+      </div>
+      <div class="row">
+        <label for="repo-name">Repo name</label>
+        <input type="text" id="repo-name" placeholder="repo name" />
+      </div>
+      <div class="row">
+        <label for="team-name">Team name</label>
+        <input type="text" id="team-name" placeholder="Team name" />
+      </div>
+      <div class="row">
+        <span>
+          <input type="checkbox" id="set-admin-access" />
+          <label for="set-admin-access">Set admin access?</label>
+        </span>
+      </div>
+
+      <label>Add or remove team access?</label>
+      <div class="row">
+        <label for="add-action"><input type="radio" id="add-action" name="add-or-remove-action" value="add">Add</label>
+      </div>
+      <div class="row">
+        <label for="remove-action"><input type="radio" id="remove-action" name="add-or-remove-action" value="remove">Remove</label>
+      </div>
+
+      <div class="row">
+        <button type="button" id="create-repo" class="primary">Create repo</button>
+      </div>
+    </form>
+
+    <hr />
+  </div>
+
 
   <script src="repositories.js"></script>
-
 </body>
 
 </html>

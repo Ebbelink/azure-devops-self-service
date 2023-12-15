@@ -3,32 +3,192 @@
 
 <head>
   <link href="access-control.css" rel="stylesheet">
-  <!-- <script type="module" src="azure-devops-ui/Core/override.css"></script> -->
 </head>
 
 <body>
-  <h1>Hello, <span id="name"></span><span id="team-name"></span></h1>
   <h2>This is <strong>ACCESS CONTROL EXTENSION</strong> in project <span id="project-name"></span></h2>
-  <button class="enabled primary" type="button">Connect to Feed</button>
+  <button class="enabled primary" type="button">Connect to ...</button>
   <button class="enabled secondary" type="button" id="do-something">CLICK ME</button>
-  <button type="button" id="show-banner-with-buttons" class="tertiary">
-    <div style="text-align: center; font-size: 14px;">Banner with buttons</div>
+  <button id="show-banner-with-buttons" class="tertiary" type="button">
+    <span>Banner with buttons</span>
   </button>
 
   <hr />
 
-  <h3>Repo name</h3>
-  <input type="text" id="ci" placeholder="CI" />
-  <input type="text" id="repo-name" placeholder="repo name" />
-  <button type="button" id="create-repo" class="primary">
-    <span>Create repo</span>
-  </button>
+  <div class="page-wrapper">
+    <h3>New team:</h3>
+    <form id="new-team-form">
+      <div class="row">
+        <label for="team-name">Team name</label>
+        <input type="text" id="team-name" placeholder="EU Transformation Group - Enabler Work" />
+      </div>
+      <div class="row">
+        <label for="product-owner">Product owner</label>
+        <select name="product-owner" id="product-owner">
+          <option disabled selected value>-- select an option --</option>
+          <option value="pinguin.panda@starttoscaleit.com">Pinguin Panda</option>
+          <option value="giraffe.gazelle@starttoscaleit.com">Giraffe Gazelle</option>
+          <option value="cat.caraccal@starttoscaleit.com">Cat Caraccal</option>
+          <option value="woodpecker.wooly.mammoth@starttoscaleit.com">Woodpecker Wooly Mammoth</option>
+        </select>
+      </div>
+      <div class="row">
+        <label for="initial-admin">Admin</label>
+        <select name="initial-admin" id="initial-admin">
+          <option disabled selected value>-- select an option --</option>
+          <option value="armadillo.axolotl@starttoscaleit.com">Armadillo Axolotl</option>
+          <option value="beaver.bear@starttoscaleit.com">Beaver Bear</option>
+          <option value="cat.caraccal@starttoscaleit.com">Cat Caraccal</option>
+          <option value="dromadary.dik.dik@starttoscaleit.com">Dromadary Dik Dik</option>
+        </select>
+      </div>
+      <div class="row">
+        <label for="base-path">Base path</label>
+        <input type="text" id="base-path" placeholder="VF\EU Transformation Group" />
+      </div>
+      <div class="row">
+        <label for="base-name">Base name</label>
+        <input type="text" id="base-name" placeholder="Enabler Work" />
+      </div>
+      <div class="row">
+        <span>
+          <input type="checkbox" id="is-area-path-private" />
+          <label for="is-area-path-private">Is area path private?</label>
+        </span>
+      </div>
 
-  <br />
-  <img src="images/logo.png" />
+      <div class="row">
+        <span>
+          Creating area path "<span id="combined-area-path" style="font-weight: bold;">VF\EU Transformation
+            Group\Enabler Work</span>" and granting team "<span id="team-name" style="font-weight: bold;">EU
+            Transformation Group - Enabler Work</span>" access to it.
+        </span>
+      </div>
+      <div class="row">
+        <button type="button" id="create-new-team" class="primary">Create new team</button>
+      </div>
+    </form>
+
+    <hr />
+
+
+    <h3>Team admin:</h3>
+    <form id="add-admin-form">
+      <div class="row">
+        <label for="team-name">Team name</label>
+        <input type="text" id="team-name" placeholder="Team name" />
+      </div>
+      <div class="row">
+        <label for="new-admin">Admin name</label>
+        <select name="new-admin" id="new-admin">
+          <option disabled selected value>-- select an option --</option>
+          <option value="armadillo.axolotl@starttoscaleit.com">Armadillo Axolotl</option>
+          <option value="beaver.bear@starttoscaleit.com">Beaver Bear</option>
+          <option value="cat.caraccal@starttoscaleit.com">Cat Caraccal</option>
+          <option value="dromadary.dik.dik@starttoscaleit.com">Dromadary Dik Dik</option>
+        </select>
+      </div>
+      <label for="add-or-remove-action">Add or remove admin access?</label>
+      <div class="row">
+        <label for="add-action"><input type="radio" id="add-action" name="add-or-remove-action" value="add">Add</label>
+      </div>
+      <div class="row">
+        <label for="remove-action"><input type="radio" id="remove-action" name="add-or-remove-action"
+            value="remove">Remove</label>
+      </div>
+
+      <div class="row">
+        <button type="button" id="create-repo" class="primary">Save</button>
+      </div>
+    </form>
+
+    <hr />
+
+
+    <h3>Change release management rights</h3>
+    <form id="release-manager-access-form">
+      <div class="row">
+        <label for="configuration-item-id">Configuration item ID</label>
+        <input type="text" id="configuration-item-id" placeholder="CI" />
+      </div>
+      <div class="row">
+        <label for="new-user">User</label>
+        <select name="new-user" id="new-user">
+          <option disabled selected value>-- select an option --</option>
+          <option value="armadillo.axolotl@starttoscaleit.com">Armadillo Axolotl</option>
+          <option value="beaver.bear@starttoscaleit.com">Beaver Bear</option>
+          <option value="cat.caraccal@starttoscaleit.com">Cat Caraccal</option>
+          <option value="dromadary.dik.dik@starttoscaleit.com">Dromadary Dik Dik</option>
+        </select>
+      </div>
+      <label>Can release to environment?</label>
+      <div class="row">
+        <label for="dev"><input type="checkbox" id="dev" name="can-release-to-environment"
+            value="DEV">Development</label>
+      </div>
+      <div class="row">
+        <label for="tst"><input type="checkbox" id="tst" name="can-release-to-environment" value="TST">Test</label>
+      </div>
+      <div class="row">
+        <label for="acc"><input type="checkbox" id="acc" name="can-release-to-environment"
+            value="ACC">Acceptance</label>
+      </div>
+      <div class="row">
+        <label for="prd"><input type="checkbox" id="prd" name="can-release-to-environment"
+            value="PRD">Production</label>
+      </div>
+
+      <label>Add or remove access?</label>
+      <div class="row">
+        <label for="add-action"><input type="radio" id="add-action" name="add-or-remove-action" value="add">Add</label>
+      </div>
+      <div class="row">
+        <label for="remove-action"><input type="radio" id="remove-action" name="add-or-remove-action"
+            value="remove">Remove</label>
+      </div>
+
+      <div class="row">
+        <button type="button" id="create-repo" class="primary">Save</button>
+      </div>
+    </form>
+
+    <hr />
+
+
+    <h3>Add or remove SonarCloud user to team:</h3>
+    <form id="grant-user-sonarcloud-team-access">
+      <div class="row">
+        <label for="ci">Configuration item ID</label>
+        <input type="text" id="ci" placeholder="CI" />
+      </div>
+      <div class="row">
+        <label for="sonar-user-id">SonarCloud user ID</label>
+        <input type="text" id="sonar-user-id" placeholder="ebbelink-na-niels51067" />
+      </div>
+      <div class="row">
+        <label for="sonar-team-name">SonarCloud team name</label>
+        <input type="text" id="sonar-team-name" placeholder="SonarCloud team name" />
+      </div>
+
+      <label for="add-or-remove-action">Add or remove team access?</label>
+      <div class="row">
+        <label for="add-action"><input type="radio" id="add-action" name="add-or-remove-action" value="add">Add</label>
+      </div>
+      <div class="row">
+        <label for="remove-action"><input type="radio" id="remove-action" name="add-or-remove-action"
+            value="remove">Remove</label>
+      </div>
+
+      <div class="row">
+        <button type="button" id="set-sonarcloud-team-access" class="primary">Save</button>
+      </div>
+    </form>
+
+    <hr />
+  </div>
+
 
   <script src="access-control.js"></script>
-
 </body>
 
 </html>
