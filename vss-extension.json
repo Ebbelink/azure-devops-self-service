@@ -1,9 +1,10 @@
 {
   "manifestVersion": 1,
   "id": "access-control-self-service",
-  "version": "0.1.299",
+  "version": "0.1.372",
   "name": "Access Control self service",
   "publisher": "StarttoScaleIT",
+  "author": "Niels Ebbelink",
   "categories": [
     "Azure Repos"
   ],

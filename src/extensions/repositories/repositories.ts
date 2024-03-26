@@ -1,4 +1,5 @@
 import "./repositories.scss";
+import { GetUsers, UserInfo, UserType } from "../global"
 
 import * as SDK from "azure-devops-extension-sdk";
 import {
@@ -8,10 +9,13 @@ import {
 } from "azure-devops-extension-api";
 import {
   GitRestClient,
-  GitRepositoryCreateOptions
+  GitRepositoryCreateOptions,
+  GitRepository
 } from "azure-devops-extension-api/Git";
 
 var currentProject: IProjectInfo | undefined;
+var gitClient: GitRestClient;
+
 
 function initSdk(): void {
   console.log("Initializing SDK");
@@ -21,7 +25,17 @@ function initSdk(): void {
   SDK.ready().then(async function () {
     console.log("SDK is ready");
 
-    document.body.querySelector("#name")!.innerHTML = SDK.getUser().name;
+    gitClient = getClient(GitRestClient);
+    let repos: GitRepository[] = await gitClient.getRepositories();
+
+    let repoOverView = <HTMLElement>document.body.querySelector("#repo-overview");
+    repoOverView.innerText = JSON.stringify(repos.map(repo => {
+      return {
+        "name": repo.name,
+        "link": repo.webUrl,
+        "project-name": repo.project.name
+      };
+    }), undefined, 2);
   });
 }
 
@@ -35,7 +49,6 @@ createRepoButton.addEventListener("click", () => {
 async function createRepo(name: string): Promise<void> {
   const accessToken = await SDK.getAccessToken();
 
-  var gitClient: GitRestClient = getClient(GitRestClient);
   console.log(gitClient.getRepositories("madailei"));
 
   const options = {} as GitRepositoryCreateOptions;

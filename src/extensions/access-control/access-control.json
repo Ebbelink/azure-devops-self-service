@@ -8,7 +8,7 @@
         ".self-service-hub-group"
       ],
       "properties": {
-        "name": "Hello",
+        "name": "Access Control",
         "order": 99,
         "uri": "dist/access-control/access-control.html",
         "icon": "asset://images/logo.png"

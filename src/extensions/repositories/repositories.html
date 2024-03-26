@@ -8,25 +8,29 @@
 <body>
   <h2>This is <strong>Repository self service</strong></h2>
 
-  <button class="enabled primary" type="button" id="retrieve-repos">Retieve all repos</button>
-  <button class="tertiary" type="button">Banner with buttons</button>
-
   <hr />
 
   <div class="page-wrapper">
+    <details>
+      <summary>These are the repositories you have access to</summary>
+      <pre id="repo-overview"></pre>
+    </details>
+
+    <hr />
+
     <h3>New repo:</h3>
-    <form id="new-repo-form">
+    <form id="new-repo-form" class="coming-soon">
       <div class="row">
         <label for="ci">Configuration Item ID</label>
         <input type="text" id="ci" placeholder="CI" />
       </div>
       <div class="row">
         <label for="repo-name">Repo name</label>
-        <input type="text" id="repo-name" placeholder="repo name" />
+        <input type="text" id="repo-name" placeholder="Name of repository" />
       </div>
       <div class="row">
         <label for="team-name">Team name</label>
-        <input type="text" id="team-name" placeholder="Team name" />
+        <input type="text" id="team-name" placeholder="Name of the team" />
       </div>
       <div class="row">
         <span>
@@ -44,18 +48,18 @@
     <hr />
 
     <h3>Give team repo access:</h3>
-    <form id="grant-team-repo-access">
+    <form id="grant-team-repo-access" class="coming-soon">
       <div class="row">
         <label for="ci">Configuration Item ID</label>
         <input type="text" id="ci" placeholder="CI" />
       </div>
       <div class="row">
         <label for="repo-name">Repo name</label>
-        <input type="text" id="repo-name" placeholder="repo name" />
+        <input type="text" id="repo-name" placeholder="Name of repository" />
       </div>
       <div class="row">
         <label for="team-name">Team name</label>
-        <input type="text" id="team-name" placeholder="Team name" />
+        <input type="text" id="team-name" placeholder="Name of the team" />
       </div>
       <div class="row">
         <span>
@@ -69,7 +73,8 @@
         <label for="add-action"><input type="radio" id="add-action" name="add-or-remove-action" value="add">Add</label>
       </div>
       <div class="row">
-        <label for="remove-action"><input type="radio" id="remove-action" name="add-or-remove-action" value="remove">Remove</label>
+        <label for="remove-action"><input type="radio" id="remove-action" name="add-or-remove-action"
+            value="remove">Remove</label>
       </div>
 
       <div class="row">

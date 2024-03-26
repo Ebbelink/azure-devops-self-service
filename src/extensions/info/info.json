@@ -10,7 +10,7 @@
       "properties": {
         "name": "Repo info",
         "order": 11,
-        "uri": "dist/repo-info/repo-info.html",
+        "uri": "dist/info/info.html",
         "icon": "asset://images/logo.png"
       }
     }
